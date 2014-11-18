@@ -29,13 +29,17 @@ public class RefactorizarColores {
        logger = initializeLogFiles();
 
         getPreferences();
+        setDefaultColor();
+
+
+    }
+
+    private static void setDefaultColor() {
         int r = preferences.getInt(CURTAIN_R, 0);
         int g = preferences.getInt(CURTAIN_G, 0);
         int b = preferences.getInt(CURTAIN_B, 0);
         int a = preferences.getInt(CURTAIN_A, 255);
         currentColor = new Color(r,g,b,a);
-
-
     }
 
     private static void getPreferences() {
